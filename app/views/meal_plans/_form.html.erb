@@ -11,12 +11,13 @@
       <%= meal_fields.hidden_field :date %>
 
       <div class="form-group">
-        <p><%= localize(meal_fields.object.date) %></p>
+        <h5><%= day_of_week(meal_fields.object.date) %></h5>
+        <h6><%= localize(meal_fields.object.date) %></h6>
       </div>
 
       <div class="form-group row">
-        <%= meal_fields.label :recipe_id, class: "col-sm-12 col-md-2" %>
-        <div class="col-sm-12 col-md-10">
+        <%# <%= meal_fields.label :recipe_id, class: "col-sm-12 col-md-2" %>
+        <div class="col-sm-12 col-md-4">
           <%= meal_fields.select :recipe_id, current_user.recipe_options, {}, class: "form-control" %>
         </div>
       </div>
@@ -24,7 +25,7 @@
     <% end %>
   </div>
 
-  <div class="form-group col-12 action">
+  <div class="form-group col-12 mt-4 action">
     <%= form.submit "Generate Plan", class: "btn btn-primary btn-block" %>
   </div>
   

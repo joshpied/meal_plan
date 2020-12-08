@@ -28,15 +28,13 @@
 }
 
 .recipes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  
 }
 
 .recipe {
-  width: 31%;
-  min-width: 300px;
-  margin-bottom: 1rem;
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
 }
 
 .margin-vertical-none {

@@ -6,17 +6,16 @@
   <ul class="meals">
     <% @meal_plan.meals.each do |meal| %>
       <li class="meal">
-        <%= localize(meal.date) %> - <%= link_to meal.recipe, recipe_path(meal.recipe) %>
+        <%= localize(meal.date) %>: <%= link_to meal.recipe, recipe_path(meal.recipe) %>
       </li>
     <% end %>
   </ul>
 
-  <div class="actions">
-    <ul class="meal-plan-actions">
-      <li><%= link_to "Edit", edit_meal_plan_path(@meal_plan) %></li>
-      <li><%= link_to "Delete", meal_plan_path(@meal_plan), data: {
-        confirm: "Are you sure you want to delete: #{@meal_plan}?",
-      }, method: :delete %></li>
-    </ul>
+  <div class="btn-group" role="group">
+    <%= link_to "Back", meal_plans_path, class: "btn btn-secondary" %>
+    <%= link_to "Edit", edit_meal_plan_path(@meal_plan), class: "btn btn-info" %>
+    <%= link_to "Delete", meal_plan_path(@meal_plan), data: {
+      confirm: "Are you sure you want to delete: #{@meal_plan}?",
+    }, method: :delete, class: "btn btn-danger" %>
   </div>
 </div>
